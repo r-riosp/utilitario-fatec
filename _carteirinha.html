@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carteirinha - Rafael Rios</title>
+    <link rel="stylesheet" href="assets/css/styles.css">   
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="assets/img/fatec-logo.png" id="logo" alt="Logo da FATEC"></a>
+    </header>
+
+    <div class="container carteirinha">
+        <img src="assets/img/carteirinha-frente.png" alt="Carteirinha Frente - FATEC" onclick="openPopup(this)">
+        <img src="assets/img/carteirinha-verso.png" alt="Carteirinha Verso - FATEC" onclick="openPopup(this)">
+    </div>
+
+    <div id="imagePopup" class="popup-overlay" onclick="closePopup()">
+        <span class="popup-close" onclick="closePopup()">&times;</span>
+        <div class="popup-content">
+            <img id="popupImage" class="popup-image" src="" alt="">
+        </div>
+    </div>
+
+    <script>
+        function openPopup(img) {
+            const popup = document.getElementById('imagePopup');
+            const popupImg = document.getElementById('popupImage');
+            
+            popupImg.src = img.src;
+            popupImg.alt = img.alt;
+            popup.style.display = 'block';
+            
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePopup() {
+            const popup = document.getElementById('imagePopup');
+            popup.style.display = 'none';
+            
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closePopup();
+            }
+        });
+    </script>
+</body>
+</html>

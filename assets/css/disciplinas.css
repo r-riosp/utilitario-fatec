@@ -1,0 +1,25 @@
+.disciplinas {
+    overflow-x: auto;
+    padding: 0 10px;
+}
+
+table {
+    margin: 20px auto;
+    width: 90%;
+}
+
+table, th, td {
+    text-align: center;
+    border: 1.3px solid #444;
+    border-collapse: collapse;
+    padding: 12px;
+}
+
+th {
+    background-color: #BD2A2E;
+    color: white;
+}
+
+tr:nth-child(odd) {
+    background-color: #889c9bb5;
+}
